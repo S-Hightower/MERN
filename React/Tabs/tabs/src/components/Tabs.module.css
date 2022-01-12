@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+}
+
+.clickers{
+    border: 2px solid black;
+    width: 200px;
+    justify-content: center;
+    margin: 25px 50px 25px 50px;
+}
+
+.content{
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab{
+    border: 3px solid black;
+    padding: 2%;
+}
