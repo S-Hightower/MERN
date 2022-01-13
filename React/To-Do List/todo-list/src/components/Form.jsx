@@ -51,11 +51,21 @@ const Form = (props) => {
         <div className={styles.listBox}>
         {tasks.map((task, index) => {
             return <div key={index} className={styles.list}>
-                <input onChange={(e) => {
-                    handleToggleComplete(index);
-                }} checked={task.complete} type="checkbox"/>
-                <h3 style = {{textDecoration: task.complete ? 'line-through' : ''}}>{task.text}</h3>
-                <button onClick={() => {handleDelete(index)}}>Delete</button>
+                <table>
+                    <tr>
+                        <th>
+                            <input onChange={(e) => {
+                                handleToggleComplete(index);
+                            }} checked={task.complete} type="checkbox" className={styles.checkbox}/>
+                        </th>
+                        <th>
+                            <h3 style = {{textDecoration: task.complete ? 'line-through' : ''}}>{task.text}</h3>
+                        </th>
+                        <th>
+                            <button onClick={() => {handleDelete(index)}} className={styles.deleteButton}>Delete</button>
+                        </th>
+                    </tr>
+                </table>
             </div>
         })}
         </div>

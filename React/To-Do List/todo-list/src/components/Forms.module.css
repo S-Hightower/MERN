@@ -36,14 +36,34 @@ button{
 }
 
 .second {
-
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    margin: auto;
 }
 
-.listBox{
+.listBox {
     margin: 25px 0px;
 }
 
-.list{
+.checkbox {
+    width: 50px;
+}
+
+.list {
     align-content: center;
     margin-top: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+.deleteButton { 
+    background-color: lightcyan;
+    margin-top: 12px;
+    margin-left: 15px;
+    font-weight: bolder;
+    height: 30px;
+    width: 100px;
+    box-shadow: 2px 2px 0.3px 0.9px darkblue;
 }
