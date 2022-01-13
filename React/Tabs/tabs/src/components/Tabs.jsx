@@ -4,10 +4,12 @@ import styles from './Tabs.module.css';
 
 const Tabs = (props) => {
     const[tabs,setTabs]= useState([]);
+    const[wasClicked, setWasClicked] = useState(false);
 
     const onClickHandler = (e, index) => {
         e.preventDefault();
         setTabs(index);
+        setWasClicked(true);
     };
 
     return (
@@ -17,10 +19,12 @@ const Tabs = (props) => {
             <div className={styles.tab} onClick={e => onClickHandler(e, 2)} value={tabs}>Tab 2</div>
             <div className={styles.tab} onClick={e => onClickHandler(e, 3)} value={tabs}>Tab 3</div>
         </div>
+        <hr/>
         <div className={styles.content}>
-            {tabs === 1 && <p>Tab 1: 🦄🦄🦄</p>}
-            {tabs === 2 && <p>Tab 2: 🐧🐧🐧</p>}
-            {tabs === 3 && <p>Tab 3: 🐼🐼🐼</p>}
+            { !wasClicked && <p>Click on a tab!</p>}
+            {tabs === 1 && <h2>Tab 1: 🦄🦄🦄</h2>}
+            {tabs === 2 && <h2>Tab 2: 🐧🐧🐧</h2>}
+            {tabs === 3 && <h2>Tab 3: 🐼🐼🐼</h2>}
         </div>
         </div>
     )

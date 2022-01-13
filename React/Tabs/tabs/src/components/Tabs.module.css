@@ -1,12 +1,18 @@
 .container{
     display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .clickers{
     border: 2px solid black;
     width: 200px;
+    display: inline-block;
     justify-content: center;
     margin: 25px 50px 25px 50px;
+    background-color: lightseagreen;
 }
 
 .content{
@@ -16,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: lightblue;
 }
 
 .tab{
