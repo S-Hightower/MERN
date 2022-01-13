@@ -7,20 +7,16 @@ const Form = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(newTasks);
-        // tasks.push(newTasks);
-        // console.log(tasks);
         setTasks([...tasks, newTasks]);
         e.target.reset();
     };
 
-    // const CheckTask = task => {
-    //     const newTasks = [...tasks];
-    //     setTasks(newTasks);
-    // };
-
-    // const DeleteTask = task => {
-    // };
+    const handleDelete = (deleteIndex) => {
+        const updatedTasks = tasks.filter((task, index) => {
+            return index !== deleteIndex;
+        });
+        setTasks(updatedTasks);
+    };
 
     return(
         <div className={styles.container}>
@@ -37,8 +33,9 @@ const Form = (props) => {
         </form>
         <div className={styles.listBox}>
         {tasks.map((task, index) => {
-            return <div className={styles.list}>
+            return <div key={index} className={styles.list}>
                 <h3>{task}</h3>
+                <button onClick={() => {handleDelete(index)}}>Delete</button>
             </div>
         })}
         </div>
