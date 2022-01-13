@@ -6,7 +6,7 @@
 .container{
     background-color: lightsteelblue;
     padding: 10px;
-    height: auto;
+    height: 600px;
     width: 600px;
     border: 5px solid darkblue;
     margin:auto;
@@ -17,12 +17,20 @@
     align-content: center;
 }
 
-.textbox{
-
+input{
+    background-color: whitesmoke;
+    float: left;
+    width: 350px;
+    line-height: 2;
+    margin-top: 15px;
+    font-weight: bolder;
 }
 
-.btn{
-
+button{
+    background-color: lightcyan;
+    margin-top: 20px;
+    width: 100px;
+    box-shadow: 3px 3px 0.3px 0.9px black;
 }
 
 .list{

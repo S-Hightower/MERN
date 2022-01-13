@@ -2,13 +2,24 @@ import React, { useState } from "react";
 import styles from './Forms.module.css';
 
 const Form = (props) => {
-    const[task, setTask] = useState("");
+    const[tasks, setTasks] = useState("");
 
     const AddTask = (e) => {
         e.preventDefault();
-        setTask("");
-        e.target.reset();
-    }
+        setTasks("");
+    };
+
+    const CheckTask = index => {
+        const newTasks = [...tasks];
+        newTasks[index].isDone = true;
+        setTasks(newTasks);
+    };
+
+    const DeleteTask = index => {
+        const newTasks = [...tasks];
+        newTasks.splice(index, 1);
+        setTasks(newTasks);
+    };
 
     return(
         <div className={styles.container}>
@@ -16,37 +27,25 @@ const Form = (props) => {
             <h1>To Do List:</h1>
         </div>
         <form onSubmit={AddTask}>
-            <div className={styles.textbox}>
-                <input type="text" placeholder="Add Text Here" onChange={e => setTask(e.target.value)} />
+            <div>
+                <input type="text" placeholder="Add Text Here" onChange={e => setTasks(e.target.value)} value={tasks}/>
             </div>
-            <div className={styles.btn}>
-                <input type="submit" value="Add Task"/>
+            <div>
+                <button>Add Task</button>
             </div>
         </form>
-            <div className={styles.list}>
+            <div>
                 <h3>Task List:</h3>
-                <ul>
-                <li>
-                {task.map((index) => {
+            </div>
+            <div className={styles.list}>
+                {tasks.map((task, index) => {
                     return (<div key={index}></div>
-                        )
-                    })
+                    )
+                })
                 }
-                </li>
-                </ul>
             </div>
         </div>
     )
-
-
-
-
-
-
-
-
-
-
 };
 
 export default Form;
