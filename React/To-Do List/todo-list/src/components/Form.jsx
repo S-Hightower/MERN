@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styles from './Forms.module.css';
 
 const Form = (props) => {
-    const[tasks, setTasks] = useState("");
+    const[tasks, setTasks] = useState([]);
+    const[newTasks, setNewTasks] = useState("");
 
-    const AddTask = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setTasks("");
     };
 
     // const CheckTask = task => {
