@@ -9,17 +9,13 @@ const Form = (props) => {
         setTasks("");
     };
 
-    const CheckTask = index => {
-        const newTasks = [...tasks];
-        newTasks[index].isDone = true;
-        setTasks(newTasks);
-    };
+    // const CheckTask = task => {
+    //     const newTasks = [...tasks];
+    //     setTasks(newTasks);
+    // };
 
-    const DeleteTask = index => {
-        const newTasks = [...tasks];
-        newTasks.splice(index, 1);
-        setTasks(newTasks);
-    };
+    // const DeleteTask = task => {
+    // };
 
     return(
         <div className={styles.container}>
@@ -34,7 +30,7 @@ const Form = (props) => {
                 <button>Add Task</button>
             </div>
         </form>
-            <div>
+            {/* <div>
                 <h3>Task List:</h3>
             </div>
             <div className={styles.list}>
@@ -43,7 +39,7 @@ const Form = (props) => {
                     )
                 })
                 }
-            </div>
+            </div> */}
         </div>
     )
 };
