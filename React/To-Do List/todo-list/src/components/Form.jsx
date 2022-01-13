@@ -11,7 +11,7 @@ const Form = (props) => {
     }
 
     return(
-        <div className={container}>
+        <div className={styles.container}>
         <div className={styles.header}>
             <h1>To Do List:</h1>
         </div>
@@ -19,17 +19,21 @@ const Form = (props) => {
             <div className={styles.textbox}>
                 <input type="text" placeholder="Add Text Here" onChange={e => setTask(e.target.value)} />
             </div>
-            <div>
+            <div className={styles.btn}>
                 <input type="submit" value="Add Task"/>
             </div>
         </form>
-            <div>
+            <div className={styles.list}>
                 <h3>Task List:</h3>
                 <ul>
-                    <li>{task}</li>
+                <li>
+                {task.map((index) => {
+                    return (<div key={index}></div>
+                        )
+                    })
+                }
+                </li>
                 </ul>
-
-
             </div>
         </div>
     )

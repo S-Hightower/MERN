@@ -1,7 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background-color: lightsteelblue;
+    padding: 10px;
+    height: auto;
+    width: 600px;
+    border: 5px solid darkblue;
+    margin:auto;
+    margin-top: 30px;
+}
+
 .header{
     align-content: center;
 }
 
 .textbox{
-    
+
+}
+
+.btn{
+
+}
+
+.list{
+    align-content: center;
 }
