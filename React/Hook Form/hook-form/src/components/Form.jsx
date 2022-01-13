@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import styles from './Form.module.css';
+
 const Form = (props) => {
     const[firstName, setFirstName] = useState("");
     const[lastName, setLastName] = useState("");
@@ -14,38 +16,44 @@ const Form = (props) => {
     const[confirmPasswordError, setConfirmPasswordError] = useState("");
 
     const createUser = (e) => {
-
-        if(e.target.value.length < 1) {
-            setFirstNameError("First name is required!");
-        } else if(e.target.value.length < 2) {
+        e.preventDefault()
+        if(firstName.length < 2 && firstName.length > 0) {
             setFirstNameError("First name must be 2 characters or longer!");
-        }
+        }else{
+            setFirstNameError("");
+        };
 
-        if(e.target.value.length < 1) {
-            setLastNameError("Last name is required!");
-        } else if(e.target.value.length < 2) {
+        if(lastName.length < 2 && lastName.length > 0) {
             setLastNameError("Last name must be 2 characters or longer!");
-        }
+        }else{
+            setLastNameError("");
+        };
 
-        if(e.target.value.length < 1) {
-            setEmailError("Email is required!");
-        } else if(e.target.value.length < 5) {
+        if(email.length < 5 && email.length > 0) {
             setEmailError("Email must be 5 characters or longer!");
-        }
+        }else{
+            setEmailError("");
+        };
 
-        if(e.target.value.length < 1) {
-            setPasswordError("Password is required!");
-        } else if(e.target.value.length < 8) {
+        if(password.length < 8 && password.length > 0) {
             setPasswordError("Password must be 8 characters or longer!");
-        }
+        }else{
+            setPasswordError("");
+        };
 
         if(password !== confirmPassword){
             setConfirmPasswordError("Passwords must match!")
-        }
+        }else if (password === confirmPassword){
+            setConfirmPasswordError("");
+        };
     }
     
     return(
-        <><form onSubmit={ (e) => e.preventDefault()}>
+        <div className={styles.container}>
+        <div className={styles.header}>
+            <h1>User Form:</h1>
+        </div>
+        <form onSubmit={ createUser }>
             <div>
                 <label>First Name: </label>
                 <input type="text" onChange={e => setFirstName(e.target.value)} />
@@ -74,9 +82,10 @@ const Form = (props) => {
             <input type="submit" value="Create User" />
         </form>
         <table>
-        <th>
-        <h1>User Data</h1>
-        </th>
+        <div className={styles.header}>
+            <h1>User Data:</h1>
+        </div>
+        <div className={styles.data}>
         <tbody>
             <tr>
                 <td>First Name:</td>
@@ -99,7 +108,9 @@ const Form = (props) => {
                 <td>{confirmPassword}</td>
             </tr>
         </tbody>
-        </table></>
+        </div>
+        </table>
+        </div>
     )
 };
 
