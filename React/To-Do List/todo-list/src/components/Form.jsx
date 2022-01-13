@@ -7,6 +7,11 @@ const Form = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // console.log(newTasks);
+        // tasks.push(newTasks);
+        // console.log(tasks);
+        setTasks([...tasks, newTasks]);
+        e.target.reset();
     };
 
     // const CheckTask = task => {
@@ -22,25 +27,22 @@ const Form = (props) => {
         <div className={styles.header}>
             <h1>To Do List:</h1>
         </div>
-        <form onSubmit={AddTask}>
+        <form onSubmit={handleSubmit}>
             <div>
-                <input type="text" placeholder="Add Text Here" onChange={e => setTasks(e.target.value)} value={tasks}/>
+                <input type="text" placeholder="Add Text Here" onChange={e => setNewTasks(e.target.value)}/>
             </div>
             <div>
                 <button>Add Task</button>
             </div>
         </form>
-            {/* <div>
-                <h3>Task List:</h3>
+        <div className={styles.listBox}>
+        {tasks.map((task, index) => {
+            return <div className={styles.list}>
+                
             </div>
-            <div className={styles.list}>
-                {tasks.map((task, index) => {
-                    return (<div key={index}>{task}</div>
-                    )
-                })
-                }
-            </div> */}
+        })}
         </div>
+        </div>//container
     )
 };
 
