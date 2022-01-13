@@ -7,7 +7,13 @@ const Form = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTasks([...tasks, newTasks]);
+
+        const taskItem = {
+            text: newTasks,
+            complete: false
+        };
+        
+        setTasks([...tasks, taskItem]);
         e.target.reset();
     };
 
@@ -34,7 +40,7 @@ const Form = (props) => {
         <div className={styles.listBox}>
         {tasks.map((task, index) => {
             return <div key={index} className={styles.list}>
-                <h3>{task}</h3>
+                <h3>{task.text}</h3>
                 <button onClick={() => {handleDelete(index)}}>Delete</button>
             </div>
         })}
