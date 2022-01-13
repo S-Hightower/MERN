@@ -39,7 +39,7 @@ const Form = (props) => {
             </div>
             <div className={styles.list}>
                 {tasks.map((task, index) => {
-                    return (<div key={index}></div>
+                    return (<div key={index}>{task}</div>
                     )
                 })
                 }
