@@ -12,7 +12,7 @@ const Form = (props) => {
             text: newTasks,
             complete: false
         };
-        
+
         setTasks([...tasks, taskItem]);
         e.target.reset();
     };
@@ -22,6 +22,16 @@ const Form = (props) => {
             return index !== deleteIndex;
         });
         setTasks(updatedTasks);
+    };
+
+    const handleToggleComplete = (toggleIndex) => {
+        const completedTasks = tasks.map((tasks, index) =>{
+            if(toggleIndex === index) {
+                tasks.complete = !tasks.complete;
+            }
+            return tasks;
+        })
+        setTasks(completedTasks);
     };
 
     return(
@@ -37,13 +47,18 @@ const Form = (props) => {
                 <button>Add Task</button>
             </div>
         </form>
+        <div className={styles.second}>
         <div className={styles.listBox}>
         {tasks.map((task, index) => {
             return <div key={index} className={styles.list}>
-                <h3>{task.text}</h3>
+                <input onChange={(e) => {
+                    handleToggleComplete(index);
+                }} checked={task.complete} type="checkbox"/>
+                <h3 style = {{textDecoration: task.complete ? 'line-through' : ''}}>{task.text}</h3>
                 <button onClick={() => {handleDelete(index)}}>Delete</button>
             </div>
         })}
+        </div>
         </div>
         </div>//container
     )
