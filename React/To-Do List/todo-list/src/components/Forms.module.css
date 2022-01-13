@@ -35,6 +35,12 @@ button{
     box-shadow: 2px 2px 0.3px 0.9px darkblue;
 }
 
+
+.listBox{
+    margin: 25px 0px;
+}
+
 .list{
     align-content: center;
+    margin-top: 10px;
 }

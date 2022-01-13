@@ -38,7 +38,7 @@ const Form = (props) => {
         <div className={styles.listBox}>
         {tasks.map((task, index) => {
             return <div className={styles.list}>
-                
+                <h3>{task}</h3>
             </div>
         })}
         </div>
