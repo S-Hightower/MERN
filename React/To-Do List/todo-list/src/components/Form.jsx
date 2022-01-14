@@ -52,19 +52,24 @@ const Form = (props) => {
         {tasks.map((task, index) => {
             return <div key={index} className={styles.list}>
                 <table>
-                    <tr>
-                        <th>
-                            <input onChange={(e) => {
-                                handleToggleComplete(index);
-                            }} checked={task.complete} type="checkbox" className={styles.checkbox}/>
-                        </th>
-                        <th>
-                            <h3 style = {{textDecoration: task.complete ? 'line-through' : ''}}>{task.text}</h3>
-                        </th>
-                        <th>
-                            <button onClick={() => {handleDelete(index)}} className={styles.deleteButton}>Delete</button>
-                        </th>
-                    </tr>
+                    <thead>
+                        <h2>Tasks:</h2>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <input onChange={(e) => {
+                                    handleToggleComplete(index);
+                                }} checked={task.complete} type="checkbox" className={styles.checkbox}/>
+                            </th>
+                            <th>
+                                <h3 style = {{textDecoration: task.complete ? 'line-through' : ''}}>{task.text}</h3>
+                            </th>
+                            <th>
+                                <button onClick={() => {handleDelete(index)}} className={styles.deleteButton}>Delete</button>
+                            </th>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         })}

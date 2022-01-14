@@ -46,6 +46,11 @@ button{
     margin: 25px 0px;
 }
 
+h2 {
+    align-content: center;
+    text-decoration: underline;
+}
+
 .checkbox {
     width: 50px;
 }
@@ -58,6 +63,7 @@ button{
 h3 {
     margin-top: 10px;
 }
+
 .deleteButton { 
     background-color: lightcyan;
     margin-top: 12px;
