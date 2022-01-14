@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 
+import styles from '../components/NavBarContext.module.css';
+
 import NavBarContext from '../contexts/NavBarContext';
 
 const Form = (props) => {

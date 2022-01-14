@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 
 import NavBarContext from "../contexts/NavBarContext";
 
-const NavBar = (props) => {
+import styles from "../components/NavBarContext.module.css";
+
+const NavBar = () => {
     const { name } = useContext(NavBarContext);
 
     return (
-        <nav>Sup { name }👀</nav>
+        <nav className={styles.nav}>Sup { name }😎</nav>
     );  
 };
 
