@@ -49,12 +49,12 @@ const Form = (props) => {
         </form>
         <div className={styles.second}>
         <div className={styles.listBox}>
+        <div className={styles.thead}>
+            <h2>Tasks:</h2>
+        </div>
         {tasks.map((task, index) => {
             return <div key={index} className={styles.list}>
                 <table>
-                    <thead className={styles.thead}>
-                        <h2>Tasks:</h2>
-                    </thead>
                     <tbody>
                         <tr>
                             <th>
