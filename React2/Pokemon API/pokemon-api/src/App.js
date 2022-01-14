@@ -1,9 +1,10 @@
 import './App.css';
+import FetchPokemon from './components/FetchPokemon';
 
 function App() {
   return (
     <div className="App">
-      <h1>This will be a pokemon api assignment</h1>
+      <FetchPokemon />
     </div>
   );
 }
