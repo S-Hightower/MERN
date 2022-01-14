@@ -52,7 +52,7 @@ const Form = (props) => {
         {tasks.map((task, index) => {
             return <div key={index} className={styles.list}>
                 <table>
-                    <thead>
+                    <thead className={styles.thead}>
                         <h2>Tasks:</h2>
                     </thead>
                     <tbody>
