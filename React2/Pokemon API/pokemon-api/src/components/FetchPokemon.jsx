@@ -1,18 +1,21 @@
+//edited for axios switch
+
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
 
 import styles from './FetchPokemon.module.css';
 
 const FetchPokemon = (props) => {
     const [pokemon, setPokemon] = useState("");
-    const [state, setState] = useState("");
+    // const [state, setState] = useState("");
 
     const PullPokemon = () => {
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=105')
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=105')
+            // .then(response => {
+            //     return response.json()
+            // })
             .then(response => {
-                return response.json()
-            })
-            .then(response => {
-                setState({pokemon: response.results})
+                setPokemon(response.data.results)
             })
     };
 
@@ -27,7 +30,7 @@ const FetchPokemon = (props) => {
                 <button onClick={PullPokemon}>Fetch the Pokemon!</button>
             </div>
             <div className={styles.list}>
-                {state.pokemon ? state.pokemon.map((pokemon, index) =>{
+                {pokemon ? pokemon.map((pokemon, index) =>{
                     return (<div key={index}>{pokemon.name}</div>)
                 }):null}
             </div>
