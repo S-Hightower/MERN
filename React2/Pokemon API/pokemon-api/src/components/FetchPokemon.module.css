@@ -11,6 +11,29 @@
     margin: auto;
 }
 
-.btn{
-    width: 200px;
+button{
+    width: 300px;
+    height: 50px;
+    background-color: rgb(243, 243, 162);
+    font-weight: bolder;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-image: linear-gradient(90deg,
+    #c4e17f 0 45px,
+    #f7fdca 0 80px,
+    #fad071 0 115px,
+    #f0766b 0 150px,
+    #db9dbe 0 185px,
+    #c49cdf 0 220px,
+    #6599e2 0 255px,
+    #61c2e4 0 295px) 10;
+    box-shadow: 3px 3px 0.3px 0.9px rgb(18, 18, 224);
+}
+
+.list{
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: bold;
 }

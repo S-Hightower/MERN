@@ -6,11 +6,17 @@ const FetchPokemon = (props) => {
     const [pokemon, setPokemon] = useState("");
     const [state, setState] = useState("");
 
-    useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon')
-            .then(response => response.json())
-            .then(response => setPokemon(response.results))
-    });
+    const PullPokemon = () => {
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=105')
+            .then(response => {
+                return response.json()
+            })
+            .then(response => {
+                setState({pokemon: response.results})
+            })
+    };
+
+
 
     return (
         <div className={styles.container}>
@@ -18,12 +24,12 @@ const FetchPokemon = (props) => {
                 <h1>Pokemon API</h1>
             </div>
             <div>
-                <button onClick={FetchPokemon}>Fetch the Pokemon!</button>
+                <button onClick={PullPokemon}>Fetch the Pokemon!</button>
             </div>
-            <div>
-                {pokemon.length > 0 && pokemon.map((pokemon, index) =>{
+            <div className={styles.list}>
+                {state.pokemon ? state.pokemon.map((pokemon, index) =>{
                     return (<div key={index}>{pokemon.name}</div>)
-                })}
+                }):null}
             </div>
         </div>
     );
