@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 import axios from 'axios';
 
@@ -20,27 +20,13 @@ const People = (props) => {
     return (
         selection.error ?
         <h1>{selection.error}</h1> :
-        <table>
-            <thead>
-                <tr>
-                    <h1>Person: {selection.name}</h1>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    Height: {selection.height}
-                </tr>
-                <tr>
-                    Eye Color: {selection.eye_color}
-                </tr>
-                <tr>
-                    Birth Year: {selection.birth_year}
-                </tr>
-                <tr>
-                    Homeworld: {selection.homeworld}
-                </tr>
-            </tbody>
-        </table>
+        <div>
+            <h1>Person: {selection.name}</h1>
+            <h5>Height: {selection.height}</h5>
+            <h5>Eye Color: {selection.eye_color}</h5>
+            <h5>Birth Year: {selection.birth_year}</h5>
+            <h5>Homeworld: {selection.homeworld}</h5>
+        </div>
     );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
 
 
 const Home = (props) => {
@@ -14,7 +14,7 @@ const Home = (props) => {
     };
 
     return(
-        <div className="container-sm mt-3">
+        <div className="container-sm mt-3 mb-5">
             <h1>Star Wars Search</h1>
             <h5>Look for: Planets/People/Species</h5>
             <form onSubmit={StarWarsPull}>

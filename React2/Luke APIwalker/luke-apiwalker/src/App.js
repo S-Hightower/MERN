@@ -20,14 +20,17 @@ function App() {
           </Route>
 
           <Route path="/planets/:id">
+            <Home/>
             <Planets/>
           </Route>
 
           <Route path="/people/:id">
+            <Home/>
             <People/>
           </Route>
 
           <Route path="/species/:id">
+            <Home/>
             <Species/>
           </Route>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 import axios from 'axios';
 
@@ -20,27 +20,13 @@ const Planets = (props) => {
     return (
         selection.error ?
         <h1>{selection.error}</h1> :
-        <table>
-            <thead>
-                <tr>
-                    <h1>Planet: {selection.name}</h1>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    Climate: {selection.climate}
-                </tr>
-                <tr>
-                    Terrain: {selection.terrain}
-                </tr>
-                <tr>
-                    Rotation Period: {selection.rotation_period}
-                </tr>
-                <tr>
-                    Population: {selection.population}
-                </tr>
-            </tbody>
-        </table>
+        <div>
+            <h1>Planet: {selection.name}</h1>
+            <h5>Climate: {selection.climate}</h5>
+            <h5>Terrain: {selection.terrain}</h5>
+            <h5>Rotation Period: {selection.rotation_period}</h5>
+            <h5>Population: {selection.population}</h5>
+        </div>
     );
 };
 
