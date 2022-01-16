@@ -9,9 +9,7 @@ const People = (props) => {
 
     useEffect(() => {
         axios.get('https://swapi.dev/api/people/${id}')
-        .then(response => {
-            setSelection(response.selection);
-        })
+        .then(response => {setSelection(response.selection);})
         .catch(error => {
             setSelection({error: "These are not the droids you are looking for..."})
         });
