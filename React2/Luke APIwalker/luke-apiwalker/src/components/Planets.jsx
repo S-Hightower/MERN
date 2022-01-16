@@ -20,18 +20,27 @@ const Planets = (props) => {
     return (
         selection.error ?
         <h1>{selection.error}</h1> :
-            <div>
-                <h1>Planet: {selection.name}</h1>
-                <p>
+        <table>
+            <thead>
+                <tr>
+                    <h1>Planet: {selection.name}</h1>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     Climate: {selection.climate}
-                    <hr></hr>
+                </tr>
+                <tr>
                     Terrain: {selection.terrain}
-                    <hr></hr>
+                </tr>
+                <tr>
                     Rotation Period: {selection.rotation_period}
-                    <hr></hr>
+                </tr>
+                <tr>
                     Population: {selection.population}
-                </p>
-            </div>
+                </tr>
+            </tbody>
+        </table>
     );
 };
 
