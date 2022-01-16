@@ -17,6 +17,22 @@ const Planets = (props) => {
         });
     }, [id]);
 
+    return (
+        selection.error ?
+        <h1>{selection.error}</h1> :
+            <div>
+                <h1>Planet: {selection.name}</h1>
+                <p>
+                    Climate: {selection.climate}
+                    <hr></hr>
+                    Terrain: {selection.terrain}
+                    <hr></hr>
+                    Rotation Period: {selection.rotation_period}
+                    <hr></hr>
+                    Population: {selection.population}
+                </p>
+            </div>
+    );
 };
 
 export default Planets;
