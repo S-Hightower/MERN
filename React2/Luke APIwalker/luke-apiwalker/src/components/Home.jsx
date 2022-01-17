@@ -17,7 +17,7 @@ const Home = (props) => {
         <div className="container-sm mt-3 mb-5">
             <h1>Star Wars Search</h1>
             <h5>Look for: Planets/People/Species</h5>
-            <form onSubmit = {StarWarsPull}>
+            <form onClick = {StarWarsPull}>
                 <div className="form-group mt-3">
                     <label>Search for:</label>
                     <select onChange={e=> setSelection(e.target.value)} value={selection} className="form-select">

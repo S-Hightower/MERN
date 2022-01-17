@@ -4,22 +4,22 @@ import { useParams } from "react-router";
 import axios from 'axios';
 
 const Planets = (props) => {
-    const [planet, setPlanet] = useState([]);
+    const [planet, setPlanet] = useState({});
     const {id} = useParams();
 
     useEffect(() => {
-        axios.get('https://swapi.dev/api/planets/${id}')
+        axios.get('https://swapi.dev/api/planets/${id}/')
         .then(response => {
-            setPlanet(response.data.planet);
+            setPlanet(response.data);
         })
-        // .catch(error => {
-        //     setPlanet({error: "These are not the droids you are looking for..."})
-        // });
+        .catch(error => {
+            setPlanet({error: "These are not the droids you are looking for..."})
+        });
     }, [id]);
 
     return (
-        // planet.error ?
-        // <h1>{planet.error}</h1> :
+        planet.error ?
+        <h1>{planet.error}</h1> :
         <div>
             <h1>Planet: {planet.name}</h1>
             <h5>Climate: {planet.climate}</h5>
