@@ -4,26 +4,26 @@ import { useParams } from "react-router";
 import axios from 'axios';
 
 const People = (props) => {
-    const [selection, setSelection] = useState([]);
+    const [person, setPerson] = useState([]);
     const {id} = useParams();
 
     useEffect(() => {
         axios.get('https://swapi.dev/api/people/${id}')
-        .then(response => {setSelection(response.selection);})
+        .then(response => {setPerson(response.person);})
         .catch(error => {
-            setSelection({error: "These are not the droids you are looking for..."})
+            setPerson({error: "These are not the droids you are looking for..."})
         });
     }, [id]);
 
     return (
-        selection.error ?
-        <h1>{selection.error}</h1> :
+        person.error ?
+        <h1>{person.error}</h1> :
         <div>
-            <h1>Person: {selection.name}</h1>
-            <h5>Height: {selection.height}</h5>
-            <h5>Eye Color: {selection.eye_color}</h5>
-            <h5>Birth Year: {selection.birth_year}</h5>
-            <h5>Homeworld: {selection.homeworld}</h5>
+            <h1>Person: {person.name}</h1>
+            <h5>Height: {person.height}</h5>
+            <h5>Eye Color: {person.eye_color}</h5>
+            <h5>Birth Year: {person.birth_year}</h5>
+            <h5>Homeworld: {person.homeworld}</h5>
         </div>
     );
 };

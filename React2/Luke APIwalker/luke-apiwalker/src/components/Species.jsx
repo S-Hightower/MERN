@@ -4,28 +4,28 @@ import { useParams } from "react-router";
 import axios from 'axios';
 
 const Species = (props) => {
-    const [input, setInput] = useState([]);
+    const [species, setSpecies] = useState([]);
     const {id} = useParams();
 
     useEffect(() => {
         axios.get('https://swapi.dev/api/species/${id}')
         .then(response => {
-            setInput(response.input);
+            setSpecies(response.species);
         })
         .catch(error => {
-            setInput({error: "These are not the droids you are looking for..."})
+            setSpecies({error: "These are not the droids you are looking for..."})
         });
     }, [id]);
 
     return (
-        input.error ?
-        <h1>{input.error}</h1> :
+        species.error ?
+        <h1>{species.error}</h1> :
         <div>
-            <h1>Species: {input.name}</h1>
-            <h5>Classification: {input.classification}</h5>
-            <h5>Average Lifespan: {input.average_lifespan}</h5>
-            <h5>Language: {input.language}</h5>
-            <h5>Homeworld: {input.homeworld}</h5>
+            <h1>Species: {species.name}</h1>
+            <h5>Classification: {species.classification}</h5>
+            <h5>Average Lifespan: {species.average_lifespan}</h5>
+            <h5>Language: {species.language}</h5>
+            <h5>Homeworld: {species.homeworld}</h5>
         </div>
     );
 };
