@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const Home = (props) => {
     const [selection, setSelection] = useState("planets");
-    const [id, setId] = useState(7);
+    const [id, setId] = useState(1);
     const history = useHistory();
 
     const StarWarsPull = e => {

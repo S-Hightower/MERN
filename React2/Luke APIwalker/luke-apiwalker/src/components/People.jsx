@@ -19,11 +19,11 @@ const People = (props) => {
         person.error ?
         <h1>{person.error}</h1> :
         <div>
-            <h1>Person: {person.name}</h1>
-            <h5>Height: {person.height}</h5>
-            <h5>Eye Color: {person.eye_color}</h5>
-            <h5>Birth Year: {person.birth_year}</h5>
-            <h5>Homeworld: {person.homeworld}</h5>
+            <h1>Person:  {person.name}</h1>
+            <h5>Height:  {person.height}</h5>
+            <h5>Eye Color:  {person.eye_color}</h5>
+            <h5>Birth Year:  {person.birth_year}</h5>
+            <h5>Homeworld:  {person.homeworld}</h5>
         </div>
     );
 };
