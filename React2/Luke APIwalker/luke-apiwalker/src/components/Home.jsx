@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const Home = (props) => {
     const [selection, setSelection] = useState("planets");
-    const [id, setId] = useState(1);
+    const [id, setId] = useState(7);
     const history = useHistory();
 
     const StarWarsPull = e => {
@@ -17,7 +17,7 @@ const Home = (props) => {
         <div className="container-sm mt-3 mb-5">
             <h1>Star Wars Search</h1>
             <h5>Look for: Planets/People/Species</h5>
-            <form onClick = {StarWarsPull}>
+            <form onSubmit = {StarWarsPull}>
                 <div className="form-group mt-3">
                     <label>Search for:</label>
                     <select onChange={e=> setSelection(e.target.value)} value={selection} className="form-select">

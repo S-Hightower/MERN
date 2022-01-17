@@ -4,13 +4,13 @@ import { useParams } from "react-router";
 import axios from 'axios';
 
 const Species = (props) => {
-    const [species, setSpecies] = useState([]);
+    const [species, setSpecies] = useState({});
     const {id} = useParams();
 
     useEffect(() => {
-        axios.get('https://swapi.dev/api/species/${id}')
+        axios.get(`https://swapi.dev/api/species/${id}`)
         .then(response => {
-            setSpecies(response.species);
+            setSpecies(response.data);
         })
         .catch(error => {
             setSpecies({error: "These are not the droids you are looking for..."})

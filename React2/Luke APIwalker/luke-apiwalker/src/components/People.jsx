@@ -4,12 +4,12 @@ import { useParams } from "react-router";
 import axios from 'axios';
 
 const People = (props) => {
-    const [person, setPerson] = useState([]);
+    const [person, setPerson] = useState({});
     const {id} = useParams();
 
     useEffect(() => {
-        axios.get('https://swapi.dev/api/people/${id}')
-        .then(response => {setPerson(response.person);})
+        axios.get(`https://swapi.dev/api/people/${id}`)
+        .then(response => {setPerson(response.data);})
         .catch(error => {
             setPerson({error: "These are not the droids you are looking for..."})
         });
