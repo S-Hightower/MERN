@@ -1,0 +1,13 @@
+Postman & Pokemon Assignment
+
+Requests:
+
+1. https://pokeapi.co/api/v2/pokemon/bulbasaur
+
+2. https://pokeapi.co/api/v2/type/3
+
+3. https://pokeapi.co/api/v2/ability/1
+
+4. https://pokeapi.co/api/v2/pokemon/27
+
+5. https://pokeapi.co/api/v2/pokemon?limit=150
