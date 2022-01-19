@@ -22,3 +22,16 @@ module.exports.createJoke = (req, res) => {
         .catch(err => res.json({message: "Something went wrong", error: err}));
 };
 
+//Update
+module.exports.updateExistingJoke = (req, res) => {
+    Joke.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+    .then(result => res.json({ joke: updatedJoke}))
+    .catch(err => res.json({message: "Something went wrong", error: err}));
+};
+
+//Delete
+module.exports.deleteJoke = (req, res) => {
+    Joke.deleteOne({_id: req.params.id})
+    .then(result => res.json({result: result}))
+    .catch(err => res.json({message: "Something went wrong", error: err}));
+};
